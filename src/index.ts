@@ -4,27 +4,45 @@ type BuildProps = {
   prompt: string;
   category: string;
   parameters: string;
-  character_count: number;
-  source_language: string;
-  creativity: number;
+  character_count?: number;
+  source_language?: string;
+  creativity?: number;
   n_gen?: number;
 };
 
 type GenerateProps = {
   prompt: string;
   parameters: string;
-  source_language: string;
-  character_count: number;
-  creativity: number;
+  source_language?: string;
+  character_count?: number;
+  creativity?: number;
   n_gen?: number;
 };
 
 type GenerateBlogProps = {
   blog_title: string;
-  character_count: number;
-  creativity: number;
-  source_language: string;
   blog_categories: string;
+  character_count?: number;
+  creativity?: number;
+  source_language?: string;
+  n_gen?: number;
+};
+
+type GenerateAdsProps = {
+  prompt: string;
+  parameters: string;
+  character_count?: number;
+  creativity?: number;
+  source_language?: string;
+  n_gen?: number;
+};
+
+type GenerateEmailBodyProps = {
+  email_subject: string;
+  parameters: string;
+  character_count?: number;
+  creativity?: number;
+  source_language?: string;
   n_gen?: number;
 };
 
@@ -72,9 +90,9 @@ class TextCortex {
     prompt,
     category,
     parameters,
-    character_count,
-    source_language,
-    creativity,
+    character_count = 384,
+    source_language = "Auto",
+    creativity = 0.65,
     n_gen = 1,
   }: BuildProps): RequestData {
     const reqData = {
@@ -91,24 +109,8 @@ class TextCortex {
     return reqData;
   }
 
-  async generate({
-    prompt,
-    parameters,
-    source_language,
-    character_count,
-    creativity,
-    n_gen,
-  }: GenerateProps) {
+  private async makeRequest(data: RequestData) {
     try {
-      const data = this.build({
-        prompt,
-        category: "Auto Complete",
-        parameters,
-        character_count,
-        source_language,
-        creativity,
-        n_gen,
-      });
       console.log("data", data);
       const res = await this.request({
         method: "POST",
@@ -120,6 +122,26 @@ class TextCortex {
       this.processError(error as AxiosError);
       console.log("error", error.message);
     }
+  }
+
+  async generate({
+    prompt,
+    parameters,
+    source_language,
+    character_count,
+    creativity,
+    n_gen,
+  }: GenerateProps) {
+    const data = this.build({
+      prompt,
+      category: "Auto Complete",
+      parameters,
+      character_count,
+      source_language,
+      creativity,
+      n_gen,
+    });
+    this.makeRequest(data);
   }
 
   async generateBlog(input: GenerateBlogProps) {
@@ -137,19 +159,35 @@ class TextCortex {
       category: "Blog Body",
       parameters,
     });
+    this.makeRequest(data);
+  }
 
-    try {
-      console.log("data", data);
-      const res = await this.request({
-        method: "POST",
-        url: `/generate_text`,
-        data,
-      });
-      console.log("Res", res.data);
-    } catch (error: any) {
-      this.processError(error as AxiosError);
-      console.log("error", error.message);
-    }
+  async generateAds(input: GenerateAdsProps) {
+    const data = this.build({
+      prompt: input.prompt,
+      category: "Ads",
+      parameters: input.parameters,
+      character_count: input.character_count,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+
+    this.makeRequest(data);
+  }
+
+  async generateEmailBody(input: GenerateEmailBodyProps) {
+    const data = this.build({
+      prompt: input.email_subject,
+      category: "Email Body",
+      parameters: input.parameters,
+      character_count: input.character_count,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+
+    this.makeRequest(data);
   }
 }
 
@@ -165,10 +203,26 @@ let hemingwai = new TextCortex(
 //   creativity: 0.7,
 // });
 
-hemingwai.generateBlog({
-  blog_categories: "music",
-  blog_title: "Lights please",
-  character_count: 100,
-  creativity: 0.5,
-  source_language: "de",
-});
+// hemingwai.generateBlog({
+//   blog_categories: "music",
+//   blog_title: "Lights please",
+//   character_count: 100,
+//   creativity: 0.5,
+//   source_language: "de",
+// });
+
+// hemingwai.generateAds({
+//   prompt: "Pink Geometric Bag",
+//   parameters: "Young Women",
+//   source_language: "en",
+//   character_count: 200,
+//   creativity: 0.7,
+// });
+
+// hemingwai.generateEmailBody({
+//   email_subject: "Summer Sale on Selected Sunglasses!",
+//   parameters: "Young Women",
+//   source_language: "en",
+//   // character_count: 200,
+//   // creativity: 0.7,
+// });
