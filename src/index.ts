@@ -46,6 +46,15 @@ type GenerateEmailBodyProps = {
   n_gen?: number;
 };
 
+type GenerateEmailSubjectProps = {
+  keywords: string;
+  parameters: string;
+  character_count?: number;
+  creativity?: number;
+  source_language?: string;
+  n_gen?: number;
+};
+
 type RequestData = {
   prompt: string;
   category: string;
@@ -189,6 +198,20 @@ class TextCortex {
 
     this.makeRequest(data);
   }
+
+  async generateEmailSubject(input: GenerateEmailSubjectProps) {
+    const data = this.build({
+      prompt: input.keywords,
+      category: "Email Subject",
+      parameters: input.parameters,
+      character_count: input.character_count,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+
+    this.makeRequest(data);
+  }
 }
 
 let hemingwai = new TextCortex(
@@ -226,3 +249,11 @@ let hemingwai = new TextCortex(
 //   // character_count: 200,
 //   // creativity: 0.7,
 // });
+
+hemingwai.generateEmailSubject({
+  keywords: "J.Cole, the goat, hey",
+  parameters: "Young Women",
+  source_language: "en",
+  // character_count: 200,
+  // creativity: 0.7,
+});
