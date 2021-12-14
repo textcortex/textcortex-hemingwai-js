@@ -55,6 +55,17 @@ type GenerateEmailSubjectProps = {
   n_gen?: number;
 };
 
+type GenerateProductDescriptionProps = {
+  product_title: string;
+  product_brand?: string;
+  product_category?: string[];
+  product_features?: string[];
+  character_count?: number;
+  creativity?: number;
+  source_language?: string;
+  n_gen?: number;
+};
+
 type RequestData = {
   prompt: string;
   category: string;
@@ -212,6 +223,49 @@ class TextCortex {
 
     this.makeRequest(data);
   }
+
+  async generateProductDescriptions({
+    product_brand = "",
+    product_category = [],
+    product_features = [],
+    ...input
+  }: GenerateProductDescriptionProps) {
+    let parameters = "";
+    if (product_brand.length > 0) {
+      parameters = parameters + "Brand: '" + product_brand + "'";
+    }
+    if (product_category.length > 0) {
+      if (parameters === "") {
+        parameters =
+          parameters + "Category: " + JSON.stringify(product_category);
+      } else {
+        parameters =
+          parameters + " Category: " + JSON.stringify(product_category);
+      }
+    }
+
+    if (product_features.length > 0) {
+      if (parameters === "") {
+        parameters =
+          parameters + "Features: " + JSON.stringify(product_features);
+      } else {
+        parameters =
+          parameters + " Features: " + JSON.stringify(product_features);
+      }
+    }
+
+    const data = this.build({
+      prompt: input.product_title,
+      category: "Product Description",
+      parameters: parameters,
+      character_count: input.character_count,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+
+    this.makeRequest(data);
+  }
 }
 
 let hemingwai = new TextCortex(
@@ -250,10 +304,17 @@ let hemingwai = new TextCortex(
 //   // creativity: 0.7,
 // });
 
-hemingwai.generateEmailSubject({
-  keywords: "J.Cole, the goat, hey",
-  parameters: "Young Women",
-  source_language: "en",
-  // character_count: 200,
-  // creativity: 0.7,
-});
+// hemingwai.generateEmailSubject({
+//   keywords: "J.Cole, the goat, hey",
+//   parameters: "Young Women",
+//   source_language: "en",
+//   // character_count: 200,
+//   // creativity: 0.7,
+// });
+
+// hemingwai.generateProductDescriptions({
+//   product_title: "Headphone",
+//   product_brand: "JBL",
+//   product_features: ["Noise canceling"],
+//   product_category: ["electronics"],
+// });
