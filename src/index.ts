@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosError, AxiosInstance } from "axios";
 
 type BuildProps = {
   prompt: string;
@@ -31,6 +31,20 @@ class TextCortex {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
+  }
+
+  private processError(error: AxiosError) {
+    const errorData = error.response?.data;
+    if (errorData.error === 403) {
+      throw new Error(
+        "API Key is invalid. Check out your API key on https://app.textcortex.com/user/account"
+      );
+    } else if (errorData.error === 402) {
+      throw new Error(
+        "Reached API Limits, increase limits by contacting us at dev@textcortex.com or upgrade your account"
+      );
+    }
+    throw error;
   }
 
   private build({
@@ -82,6 +96,7 @@ class TextCortex {
       });
       console.log("Res", res.data);
     } catch (error: any) {
+      this.processError(error as AxiosError);
       console.log("error", error.message);
     }
   }
