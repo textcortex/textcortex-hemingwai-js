@@ -10,7 +10,7 @@ import {
   RequestData,
 } from "./types/main";
 
-class TextCortex {
+export class TextCortex {
   private apiKey: string;
   private request: AxiosInstance = axios.create({
     baseURL: "https://api.textcortex.com/hemingwai",

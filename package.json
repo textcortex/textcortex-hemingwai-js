@@ -1,13 +1,26 @@
 {
   "name": "hemingwai-javascript",
   "version": "1.0.0",
+  "description": "TextCortex API javascript packages for generating content even faster!",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:textcortex/hemingwai-javascript.git",
   "author": "abrehamgezahegn <gezahegnabereham@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "tsc"
   },
+  "keywords": [
+    "content generator",
+    "text generator",
+    "AI",
+    "ML",
+    "automatic",
+    "blogs",
+    "ads",
+    "product description"
+  ],
   "devDependencies": {
     "typescript": "^4.5.4"
   },
