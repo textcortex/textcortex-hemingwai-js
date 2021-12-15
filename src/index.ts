@@ -1,82 +1,14 @@
 import axios, { AxiosError, AxiosInstance } from "axios";
-
-type BuildProps = {
-  prompt: string;
-  category: string;
-  parameters: string;
-  character_count?: number;
-  source_language?: string;
-  creativity?: number;
-  n_gen?: number;
-};
-
-type GenerateProps = {
-  prompt: string;
-  parameters: string;
-  source_language?: string;
-  character_count?: number;
-  creativity?: number;
-  n_gen?: number;
-};
-
-type GenerateBlogProps = {
-  blog_title: string;
-  blog_categories: string;
-  character_count?: number;
-  creativity?: number;
-  source_language?: string;
-  n_gen?: number;
-};
-
-type GenerateAdsProps = {
-  prompt: string;
-  parameters: string;
-  character_count?: number;
-  creativity?: number;
-  source_language?: string;
-  n_gen?: number;
-};
-
-type GenerateEmailBodyProps = {
-  email_subject: string;
-  parameters: string;
-  character_count?: number;
-  creativity?: number;
-  source_language?: string;
-  n_gen?: number;
-};
-
-type GenerateEmailSubjectProps = {
-  keywords: string;
-  parameters: string;
-  character_count?: number;
-  creativity?: number;
-  source_language?: string;
-  n_gen?: number;
-};
-
-type GenerateProductDescriptionProps = {
-  product_title: string;
-  product_brand?: string;
-  product_category?: string[];
-  product_features?: string[];
-  character_count?: number;
-  creativity?: number;
-  source_language?: string;
-  n_gen?: number;
-};
-
-type RequestData = {
-  prompt: string;
-  category: string;
-  parameters: string;
-  character_count: number;
-  source_language: string;
-  //  Sets string ; number between 0 and 1. Default is 0.65
-  creativity: number;
-  api_key: string;
-  n_gen: number;
-};
+import {
+  BuildProps,
+  GenerateProps,
+  GenerateBlogProps,
+  GenerateAdsProps,
+  GenerateEmailBodyProps,
+  GenerateEmailSubjectProps,
+  GenerateProductDescriptionProps,
+  RequestData,
+} from "./types/main";
 
 class TextCortex {
   private apiKey: string;
@@ -312,9 +244,10 @@ let hemingwai = new TextCortex(
 //   // creativity: 0.7,
 // });
 
-// hemingwai.generateProductDescriptions({
-//   product_title: "Headphone",
-//   product_brand: "JBL",
-//   product_features: ["Noise canceling"],
-//   product_category: ["electronics"],
-// });
+hemingwai.generateProductDescriptions({
+  product_title: "Headphone",
+  product_brand: "JBL",
+  product_features: ["Noise canceling"],
+  product_category: ["electronics"],
+  source_language: "cs",
+});
