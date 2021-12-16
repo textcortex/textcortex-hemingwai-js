@@ -127,7 +127,7 @@ const countries = [
   "uz",
   "vi",
   "cy",
-  "Auto",
+  "auto",
 ] as const;
 
 type Country = typeof countries[number];
