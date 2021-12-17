@@ -43,7 +43,7 @@ export class TextCortex {
     category,
     parameters,
     character_count = 384,
-    source_language = "Auto",
+    source_language = "auto",
     creativity = 0.65,
     n_gen = 1,
   }: BuildProps): RequestData {
