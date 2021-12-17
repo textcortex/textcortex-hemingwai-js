@@ -63,13 +63,12 @@ export class TextCortex {
 
   private async makeRequest(data: RequestData) {
     try {
-      console.log("data", data);
       const res = await this.request({
         method: "POST",
         url: `/generate_text`,
         data,
       });
-      console.log("Res", res.data);
+      return res.data;
     } catch (error: any) {
       this.processError(error as AxiosError);
       console.log("error", error.message);
@@ -249,5 +248,5 @@ hemingwai.generateProductDescriptions({
   product_brand: "JBL",
   product_features: ["Noise canceling"],
   product_category: ["electronics"],
-  source_language: "cs",
+  source_language: "en",
 });
