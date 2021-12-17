@@ -104,7 +104,7 @@ Here is a brief summary of what those variables are:
 
 ## Examples
 
-See [examples](https://github.com/textcortex/hemingwai-javascript/tree/staging/src/examples) for examples.
+See [examples](https://github.com/textcortex/hemingwai-javascript/tree/master/examples) for examples.
 
 Note: while generating ads, you can add your target segment as an option.
 
