@@ -104,7 +104,7 @@ export class TextCortex {
   async generateBlog(input: GenerateBlogProps) {
     let parameters = "";
     if (input.blog_categories) {
-      parameters = `Blog Categories: ${input.blog_categories}`;
+      parameters = `Blog Categories: ${JSON.stringify(input.blog_categories)}`;
     }
 
     const data = this.build({
@@ -204,54 +204,3 @@ export class TextCortex {
     return this.makeRequest(data);
   }
 }
-
-let hemingwai = new TextCortex(
-  "gAAAAABht4j63M8buDUobQjj2YvK-aWIlQFZLXmDYg9Wc1hpfwHXDJ2DGvWvJjXlA1owHzag_cgO7htt7ePU4qrYf7fC5dMdO2JQqvxE9I1DBTM_NpY99e9TyWTz5u1oOjtoS24FZaWF"
-);
-
-// hemingwai
-//   .generateBlog({
-//     blog_categories: "music",
-//     blog_title: "Lights please",
-//     character_count: 100,
-//     creativity: 0.5,
-//     source_language: "de",
-//   })
-//   .then((res) => {
-//     console.log("res: ", res);
-//   })
-//   .catch((err) => {
-//     console.log("err", err);
-//   });
-
-// hemingwai.generateAds({
-//   prompt: "Pink Geometric Bag",
-//   parameters: "Young Women",
-//   source_language: "en",
-//   character_count: 200,
-//   creativity: 0.7,
-// });
-
-// hemingwai.generateEmailBody({
-//   email_subject: "Summer Sale on Selected Sunglasses!",
-//   parameters: "Young Women",
-//   source_language: "en",
-//   // character_count: 200,
-//   // creativity: 0.7,
-// });
-
-// hemingwai.generateEmailSubject({
-//   keywords: "J.Cole, the goat, hey",
-//   parameters: "Young Women",
-//   source_language: "en",
-//   // character_count: 200,
-//   // creativity: 0.7,
-// });
-
-// hemingwai.generateProductDescriptions({
-//   product_title: "Headphone",
-//   product_brand: "JBL",
-//   product_features: ["Noise canceling"],
-//   product_category: ["electronics"],
-//   source_language: "en",
-// });
