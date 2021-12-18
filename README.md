@@ -24,7 +24,7 @@ TextCortex API javascript packages for generating content even faster! Generate 
     - [🐞 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
   - [Maintainer/Creator](#maintainercreator)
-      - [License](#license)
+    - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -166,6 +166,7 @@ You can have a look at the [HemingwAI's documentation](https://textcortex.com/do
 
 Or talk to us at the [TextCortex Dev Community on slack](https://join.slack.com/t/textcortexaicommunity/shared_invite/zt-rmaw7j10-Lz9vf86aF5I_fYZAS7JafQ)
 <br/>
+<br/>
 
 ### 🐞 Bugs
 
@@ -173,10 +174,12 @@ Please file an issue for bugs, missing documentation, or unexpected behavior.
 
 [**See Bugs**][bugs]
 <br/>
+<br/>
 
 ### 💡 Feature Requests
 
 We are happy. Please file an issue to suggest new features. Vote on feature requests by adding a 👍. This helps maintainers prioritize what to work on.
+<br/>
 <br/>
 
 ## Maintainer/Creator
@@ -186,3 +189,5 @@ We are happy. Please file an issue to suggest new features. Vote on feature requ
 #### License
 
 MIT
+
+[bugs]: https://github.com/textcortex/hemingwai-javascript/labels/bug
