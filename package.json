@@ -1,6 +1,6 @@
 {
   "name": "hemingwai-javascript",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "TextCortex API javascript packages for generating content even faster!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
