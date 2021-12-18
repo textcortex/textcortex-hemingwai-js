@@ -105,4 +105,7 @@ typings/
 
 yarn.lock
 
-examples
+examples/
+src/
+textcortex_logo.png
+tsconfig.json
