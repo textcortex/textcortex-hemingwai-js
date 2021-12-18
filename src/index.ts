@@ -10,6 +10,9 @@ import {
   RequestData,
 } from "./types/main";
 
+type ErrorResponse = AxiosError & {
+  errorMessage?: string;
+};
 export class TextCortex {
   private apiKey: string;
   private request: AxiosInstance = axios.create({
@@ -28,15 +31,16 @@ export class TextCortex {
     const errorData = error.response?.data;
     if (errorData.error === 403) {
       throw {
-        error: new Error(
-          "API Key is invalid. Check out your API key on https://app.textcortex.com/user/account"
-        ),
-        code: 403,
+        errorMessage:
+          "API Key is invalid. Check out your API key on https://app.textcortex.com/user/account",
+        ...error,
       };
     } else if (errorData.error === 402) {
-      throw new Error(
-        "Reached API Limits, increase limits by contacting us at dev@textcortex.com or upgrade your account"
-      );
+      throw {
+        errorMessage:
+          "Reached API Limits, increase limits by contacting us at dev@textcortex.com or upgrade your account",
+        ...error,
+      };
     }
     throw error;
   }
@@ -74,7 +78,6 @@ export class TextCortex {
       return res.data;
     } catch (error: any) {
       this.processError(error as AxiosError);
-      console.log("error", error.message);
     }
   }
 
@@ -206,13 +209,20 @@ let hemingwai = new TextCortex(
   "gAAAAABht4j63M8buDUobQjj2YvK-aWIlQFZLXmDYg9Wc1hpfwHXDJ2DGvWvJjXlA1owHzag_cgO7htt7ePU4qrYf7fC5dMdO2JQqvxE9I1DBTM_NpY99e9TyWTz5u1oOjtoS24FZaWF"
 );
 
-// hemingwai.generateBlog({
-//   blog_categories: "music",
-//   blog_title: "Lights please",
-//   character_count: 100,
-//   creativity: 0.5,
-//   source_language: "de",
-// });
+// hemingwai
+//   .generateBlog({
+//     blog_categories: "music",
+//     blog_title: "Lights please",
+//     character_count: 100,
+//     creativity: 0.5,
+//     source_language: "de",
+//   })
+//   .then((res) => {
+//     console.log("res: ", res);
+//   })
+//   .catch((err) => {
+//     console.log("err", err);
+//   });
 
 // hemingwai.generateAds({
 //   prompt: "Pink Geometric Bag",
@@ -238,10 +248,10 @@ let hemingwai = new TextCortex(
 //   // creativity: 0.7,
 // });
 
-hemingwai.generateProductDescriptions({
-  product_title: "Headphone",
-  product_brand: "JBL",
-  product_features: ["Noise canceling"],
-  product_category: ["electronics"],
-  source_language: "en",
-});
+// hemingwai.generateProductDescriptions({
+//   product_title: "Headphone",
+//   product_brand: "JBL",
+//   product_features: ["Noise canceling"],
+//   product_category: ["electronics"],
+//   source_language: "en",
+// });
