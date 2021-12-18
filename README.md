@@ -15,6 +15,7 @@ TextCortex API javascript packages for generating content even faster! Generate 
   - [Installation and usage](#installation-and-usage)
     - [Get your api key:](#get-your-api-key)
     - [Response:](#response)
+    - [API key related errors](#api-key-related-errors)
   - [What kind of texts are possible to generate?](#what-kind-of-texts-are-possible-to-generate)
   - [Text Generation Variables](#text-generation-variables)
   - [Examples](#examples)
@@ -79,6 +80,26 @@ hemingwai.generateProductDescriptions({
     word_count: 56,
   },
 ];
+```
+
+### API key related errors
+
+API key related errors have an error message attached to them as follows:
+
+```js
+if (errorData.error === 403) {
+  throw {
+    errorMessage:
+      "API Key is invalid. Check out your API key on https://app.textcortex.com/user/account",
+    ...error,
+  };
+} else if (errorData.error === 402) {
+  throw {
+    errorMessage:
+      "Reached API Limits, increase limits by contacting us at dev@textcortex.com or upgrade your account",
+    ...error,
+  };
+}
 ```
 
 ## What kind of texts are possible to generate?
