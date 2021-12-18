@@ -18,7 +18,7 @@ export interface GenerateProps extends Base {
 
 export interface GenerateBlogProps extends Base {
   blog_title: string;
-  blog_categories: string;
+  blog_categories: string[];
 }
 
 export interface GenerateAdsProps extends GenerateProps {}

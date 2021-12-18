@@ -5,16 +5,17 @@ let hemingwai = new TextCortex(
 );
 
 hemingwai
-  .generate({
-    prompt: "Was ist los mit dir?",
-    parameters: "",
-    source_language: "de",
-    character_count: 120,
+  .generateAds({
+    prompt: "Pink Geometric Bag",
+    parameters: "Young Women",
+    source_language: "en",
+    character_count: 200,
     creativity: 0.7,
+    n_gen: 2,
   })
   .then((res) => {
-    console.log("res", res);
+    console.log("res: ", res);
   })
   .catch((err) => {
-    cosole.log(err);
+    console.log("err", err);
   });

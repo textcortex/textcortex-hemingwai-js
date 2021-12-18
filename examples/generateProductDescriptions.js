@@ -5,16 +5,16 @@ let hemingwai = new TextCortex(
 );
 
 hemingwai
-  .generate({
-    prompt: "Was ist los mit dir?",
-    parameters: "",
-    source_language: "de",
-    character_count: 120,
-    creativity: 0.7,
+  .generateProductDescriptions({
+    product_title: "Headphone",
+    product_brand: "JBL",
+    product_features: ["Noise canceling"],
+    product_category: ["electronics"],
+    source_language: "en",
   })
   .then((res) => {
-    console.log("res", res);
+    console.log("res: ", res);
   })
   .catch((err) => {
-    cosole.log(err);
+    console.log("err", err);
   });

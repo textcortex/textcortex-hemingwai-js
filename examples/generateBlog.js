@@ -5,16 +5,16 @@ let hemingwai = new TextCortex(
 );
 
 hemingwai
-  .generate({
-    prompt: "Was ist los mit dir?",
-    parameters: "",
-    source_language: "de",
-    character_count: 120,
-    creativity: 0.7,
+  .generateBlog({
+    blog_title: "Why SEO is important for your Business?",
+    blog_categories: ["SEO", "Business"],
+    character_count: 300,
+    creativity: 0.5,
+    source_language: "en",
   })
   .then((res) => {
-    console.log("res", res);
+    console.log("res: ", res);
   })
   .catch((err) => {
-    cosole.log(err);
+    console.log("err", err);
   });
