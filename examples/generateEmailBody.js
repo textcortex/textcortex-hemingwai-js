@@ -1,8 +1,6 @@
 const { TextCortex } = require("hemingwai-javascript");
 
-let hemingwai = new TextCortex(
-  "gAAAAABht4j63M8buDUobQjj2YvK-aWIlQFZLXmDYg9Wc1hpfwHXDJ2DGvWvJjXlA1owHzag_cgO7htt7ePU4qrYf7fC5dMdO2JQqvxE9I1DBTM_NpY99e9TyWTz5u1oOjtoS24FZaWF"
-);
+let hemingwai = new TextCortex(YOUR_API_KEY);
 
 hemingwai
   .generateEmailBody({
