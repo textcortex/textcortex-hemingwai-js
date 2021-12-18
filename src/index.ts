@@ -27,7 +27,7 @@ export class TextCortex {
     this.apiKey = apiKey;
   }
 
-  private processError(error: AxiosError) {
+  private processError(error: AxiosError): ErrorResponse {
     const errorData = error.response?.data;
     if (errorData.error === 403) {
       throw {
