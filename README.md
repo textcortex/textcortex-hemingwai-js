@@ -5,6 +5,28 @@
 TextCortex API javascript packages for generating content even faster! Generate product descriptions, blogs, ads and more using GPT architecture with a single request to TextCortex API a.k.a HemingwAI
 \
 
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [hemingwai-javascript](#hemingwai-javascript)
+  - [Table of Contents](#table-of-contents)
+  - [Installation and usage](#installation-and-usage)
+    - [Get your api key:](#get-your-api-key)
+    - [Response:](#response)
+  - [What kind of texts are possible to generate?](#what-kind-of-texts-are-possible-to-generate)
+  - [Text Generation Variables](#text-generation-variables)
+  - [Examples](#examples)
+  - [Issues](#issues)
+    - [❓ Questions](#-questions)
+    - [🐞 Bugs](#-bugs)
+    - [💡 Feature Requests](#-feature-requests)
+  - [Maintainer/Creator](#maintainercreator)
+      - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation and usage
 
 The easiest way to install hemingwai-javascript is using npm or yarn.
@@ -18,7 +40,7 @@ Or
 for installation via yarn
 
 ```
-npm install  hemingwai-javascript
+npm install hemingwai-javascript
 ```
 
 ### Get your api key:
@@ -110,17 +132,18 @@ Note: while generating ads, you can add your target segment as an option.
 
 <br/>
 
+## Issues
+
+Looking to contribute? You are welcome. Just fork and PR to staging branch.
+<br/>
+<br/>
+
 ### ❓ Questions
 
 You can have a look at the [HemingwAI's documentation](https://textcortex.com/documentation/api) on TextCortex website
 <br/>
 
 Or talk to us at the [TextCortex Dev Community on slack](https://join.slack.com/t/textcortexaicommunity/shared_invite/zt-rmaw7j10-Lz9vf86aF5I_fYZAS7JafQ)
-<br/>
-
-### 🚧 Issues
-
-Looking to contribute? You are welcome. Just fork and PR to staging branch.
 <br/>
 
 ### 🐞 Bugs
