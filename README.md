@@ -3,7 +3,6 @@
 ![hemingwai-javascript](./textcortex_logo.png)
 
 TextCortex API javascript packages for generating content even faster! Generate product descriptions, blogs, ads and more using GPT architecture with a single request to TextCortex API a.k.a HemingwAI
-\
 
 ## Table of Contents
 
@@ -24,7 +23,7 @@ TextCortex API javascript packages for generating content even faster! Generate 
     - [🐞 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
   - [Maintainer/Creator](#maintainercreator)
-    - [License](#license)
+      - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -72,8 +71,7 @@ hemingwai.generateProductDescriptions({
 ```js
 [
   {
-    generated_text:
-      " The JBL K8 In-Ear Noise Canceling Earbuds are designed to block out unwanted ambient noise while you're on the go. If you prefer music without distraction, these earphones will do the job for you. Made with a dynamic driver and an inline microphone for exceptional sound quality, they come in black and feature built-in volume control.",
+    generated_text: ` The JBL K8 In-Ear Noise Canceling Earbuds are designed to block out unwanted  ambient noise while you're on the go. If you prefer music without distraction,  these earphones will do the job for you. Made with a dynamic driver and an inline microphone for exceptional sound quality,  they come in black and feature built-in volume control.`,
     rank: 0.9762,
     text_length: 336,
     word_frequency: [],
