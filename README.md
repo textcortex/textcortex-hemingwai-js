@@ -1,6 +1,6 @@
-# [textcortex-hemingwai-js](https://textcortex.com/documentation/api)
+# [textcortext-hemingwai-javascript](https://textcortex.com/documentation/api)
 
-![textcortex-hemingwai-js](./textcortex_logo.png)
+![textcortext-hemingwai-javascript](./textcortex_logo.png)
 
 TextCortex API javascript packages for generating content even faster! Generate product descriptions, blogs, ads and more using GPT architecture with a single request to TextCortex API a.k.a HemingwAI
 
@@ -9,7 +9,7 @@ TextCortex API javascript packages for generating content even faster! Generate 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [textcortex-hemingwai-js](#textcortex-hemingwai-js)
+- [textcortext-hemingwai-javascript](#textcortext-hemingwai-javascript)
   - [Table of Contents](#table-of-contents)
   - [Installation and usage](#installation-and-usage)
     - [Get your api key:](#get-your-api-key)
@@ -29,10 +29,10 @@ TextCortex API javascript packages for generating content even faster! Generate 
 
 ## Installation and usage
 
-The easiest way to install textcortex-hemingwai-js is using npm or yarn.
+The easiest way to install textcortext-hemingwai-javascript is using npm or yarn.
 
 ```
-yarn add textcortex-hemingwai-js
+yarn add textcortext-hemingwai-javascript
 ```
 
 Or
@@ -40,7 +40,7 @@ Or
 for installation via yarn
 
 ```
-npm install textcortex-hemingwai-js
+npm install textcortext-hemingwai-javascript
 ```
 
 ### Get your api key:
@@ -53,7 +53,7 @@ npm install textcortex-hemingwai-js
 Start generating content with a single line of code!
 
 ```js
-import { TextCortex } from "textcortex-hemingwai-js";
+import { TextCortex } from "textcortext-hemingwai-javascript";
 
 const hemingwai = new TextCortex(YOUR_API_KEY);
 
@@ -145,7 +145,7 @@ Here is a brief summary of what those variables are:
 
 ## Examples
 
-See [examples](https://github.com/textcortex/textcortex-hemingwai-js/tree/master/examples) for examples.
+See [examples](https://github.com/textcortex/textcortext-hemingwai-javascript/tree/master/examples) for examples.
 
 Note: while generating ads, you can add your target segment as an option.
 
@@ -188,4 +188,4 @@ We are happy. Please file an issue to suggest new features. Vote on feature requ
 
 MIT
 
-[bugs]: https://github.com/textcortex/textcortex-hemingwai-js/labels/bug
+[bugs]: https://github.com/textcortex/textcortext-hemingwai-javascript/labels/bug
