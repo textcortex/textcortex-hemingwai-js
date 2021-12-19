@@ -108,3 +108,4 @@ yarn.lock
 examples/
 src/
 tsconfig.json
+.vscode
