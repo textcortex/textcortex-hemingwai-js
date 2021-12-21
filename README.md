@@ -1,6 +1,6 @@
-# [textcortext-hemingwai-javascript](https://textcortex.com/documentation/api)
+# [textcortex-hemingwai-js](https://textcortex.com/documentation/api)
 
-![textcortext-hemingwai-javascript](./textcortex_logo.png)
+![textcortex-hemingwai-js](./textcortex_logo.png)
 
 TextCortex API javascript packages for generating content even faster! Generate product descriptions, blogs, ads and more using GPT architecture with a single request to TextCortex API a.k.a HemingwAI
 
@@ -9,7 +9,7 @@ TextCortex API javascript packages for generating content even faster! Generate 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [textcortext-hemingwai-javascript](#textcortext-hemingwai-javascript)
+- [textcortex-hemingwai-js](#textcortex-hemingwai-js)
   - [Table of Contents](#table-of-contents)
   - [Installation and usage](#installation-and-usage)
     - [Get your api key:](#get-your-api-key)
@@ -23,16 +23,16 @@ TextCortex API javascript packages for generating content even faster! Generate 
     - [🐞 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
   - [Maintainer/Creator](#maintainercreator)
-    - [License](#license)
+      - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation and usage
 
-The easiest way to install textcortext-hemingwai-javascript is using npm or yarn.
+The easiest way to install textcortex-hemingwai-js is using npm or yarn.
 
 ```
-yarn add textcortext-hemingwai-javascript
+yarn add textcortex-hemingwai-js
 ```
 
 Or
@@ -40,7 +40,7 @@ Or
 for installation via yarn
 
 ```
-npm install textcortext-hemingwai-javascript
+npm install textcortex-hemingwai-js
 ```
 
 ### Get your api key:
@@ -53,7 +53,7 @@ npm install textcortext-hemingwai-javascript
 Start generating content with a single line of code!
 
 ```js
-import { TextCortex } from "textcortext-hemingwai-javascript";
+import { TextCortex } from "textcortex-hemingwai-js";
 
 const hemingwai = new TextCortex(YOUR_API_KEY);
 
@@ -69,15 +69,19 @@ hemingwai.generateProductDescriptions({
 ### Response:
 
 ```js
-[
-  {
-    generated_text: ` The JBL K8 In-Ear Noise Canceling Earbuds are designed to block out unwanted  ambient noise while you're on the go. If you prefer music without distraction,  these earphones will do the job for you. Made with a dynamic driver and an inline microphone for exceptional sound quality,  they come in black and feature built-in volume control.`,
-    rank: 0.9762,
-    text_length: 336,
-    word_frequency: [],
-    word_count: 56,
-  },
-];
+{
+  status: "success",
+  ai_results: [
+    {
+      generated_text: ` The JBL K8 In-Ear Noise Canceling Earbuds are designed to block out unwanted  ambient noise while you're on the go. If you prefer music without distraction,  these earphones will do the job for you. Made with a dynamic driver and an inline microphone for exceptional sound quality,  they come in black and feature built-in volume control.`,
+      rank: 0.9762,
+      text_length: 336,
+      word_frequency: [],
+      word_count: 56,
+    },
+  ],
+  error: 200,
+}
 ```
 
 ### API key related errors
@@ -145,7 +149,7 @@ Here is a brief summary of what those variables are:
 
 ## Examples
 
-See [examples](https://github.com/textcortex/textcortext-hemingwai-javascript/tree/master/examples) for examples.
+See [examples](https://github.com/textcortex/textcortex-hemingwai-js/tree/main/examples) for examples.
 
 Note: while generating ads, you can add your target segment as an option.
 
@@ -188,4 +192,4 @@ We are happy. Please file an issue to suggest new features. Vote on feature requ
 
 MIT
 
-[bugs]: https://github.com/textcortex/textcortext-hemingwai-javascript/labels/bug
+[bugs]: https://github.com/textcortex/textcortex-hemingwai-js/labels/bug
