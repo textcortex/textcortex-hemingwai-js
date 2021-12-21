@@ -1,4 +1,4 @@
-const { TextCortex } = require("textcortext-hemingwai-javascript");
+const { TextCortex } = require("textcortex-hemingwai-js");
 
 let hemingwai = new TextCortex(YOUR_API_KEY);
 

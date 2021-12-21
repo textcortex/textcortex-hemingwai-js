@@ -1,10 +1,10 @@
 {
-  "name": "textcortext-hemingwai-js",
+  "name": "textcortex-hemingwai-js",
   "version": "1.0.0",
   "description": "TextCortex API javascript packages for generating content even faster!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:textcortex/textcortext-hemingwai-javascript.git",
+  "repository": "git@github.com:textcortex/textcortex-hemingwai-js.git",
   "author": "abrehamgezahegn <gezahegnabereham@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -23,7 +23,7 @@
   ],
   "devDependencies": {
     "typescript": "^4.5.4",
-    "textcortext-hemingwai-javascript": "^0.0.0"
+    "textcortex-hemingwai-js": "^1.0.0"
   },
   "dependencies": {
     "axios": "^0.24.0"
