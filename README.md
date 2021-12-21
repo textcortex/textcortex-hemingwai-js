@@ -23,7 +23,7 @@ TextCortex API javascript packages for generating content even faster! Generate 
     - [🐞 Bugs](#-bugs)
     - [💡 Feature Requests](#-feature-requests)
   - [Maintainer/Creator](#maintainercreator)
-    - [License](#license)
+      - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -69,15 +69,19 @@ hemingwai.generateProductDescriptions({
 ### Response:
 
 ```js
-[
-  {
-    generated_text: ` The JBL K8 In-Ear Noise Canceling Earbuds are designed to block out unwanted  ambient noise while you're on the go. If you prefer music without distraction,  these earphones will do the job for you. Made with a dynamic driver and an inline microphone for exceptional sound quality,  they come in black and feature built-in volume control.`,
-    rank: 0.9762,
-    text_length: 336,
-    word_frequency: [],
-    word_count: 56,
-  },
-];
+{
+  status: "success",
+  ai_results: [
+    {
+      generated_text: ` The JBL K8 In-Ear Noise Canceling Earbuds are designed to block out unwanted  ambient noise while you're on the go. If you prefer music without distraction,  these earphones will do the job for you. Made with a dynamic driver and an inline microphone for exceptional sound quality,  they come in black and feature built-in volume control.`,
+      rank: 0.9762,
+      text_length: 336,
+      word_frequency: [],
+      word_count: 56,
+    },
+  ],
+  error: 200,
+}
 ```
 
 ### API key related errors
@@ -145,7 +149,7 @@ Here is a brief summary of what those variables are:
 
 ## Examples
 
-See [examples](https://github.com/textcortex/textcortex-hemingwai-js/tree/master/examples) for examples.
+See [examples](https://github.com/textcortex/textcortex-hemingwai-js/tree/main/examples) for examples.
 
 Note: while generating ads, you can add your target segment as an option.
 
