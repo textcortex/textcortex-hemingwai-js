@@ -10,6 +10,7 @@ import {
   RequestData,
   GenerateMetaDescProps,
   GenerateBlogTitleProps,
+  GenerateInstagramCaptionsProps,
 } from "./types/main";
 
 type ErrorResponse = AxiosError & {
@@ -225,6 +226,19 @@ export class TextCortex {
       category: "Blog Title",
       parameters: "",
       character_count: input.character_count,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+    return this.makeRequest(data);
+  }
+
+  async generateInstagramCaption(input: GenerateInstagramCaptionsProps) {
+    const data = this.build({
+      prompt: input.product,
+      category: "Instagram Caption",
+      parameters: input.audience,
+      character_count: input.character_count || 256,
       creativity: input.creativity,
       n_gen: input.n_gen,
       source_language: input.source_language,

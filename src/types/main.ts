@@ -60,6 +60,11 @@ export interface GenerateBlogTitleProps extends Base {
   blogCategories: string[];
 }
 
+export interface GenerateInstagramCaptionsProps extends Base {
+  product: string;
+  audience: string;
+}
+
 const countries = [
   "af",
   "sq",
