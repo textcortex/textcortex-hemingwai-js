@@ -11,6 +11,8 @@ import {
   GenerateMetaDescProps,
   GenerateBlogTitleProps,
   GenerateInstagramCaptionsProps,
+  Paraphrase,
+  ParaphraseProps,
 } from "./types/main";
 
 type ErrorResponse = AxiosError & {
@@ -241,6 +243,19 @@ export class TextCortex {
       character_count: input.character_count || 256,
       creativity: input.creativity,
       n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+    return this.makeRequest(data);
+  }
+
+  async paraphrase(input: ParaphraseProps) {
+    const data = this.build({
+      prompt: input.prompt,
+      category: "Paraphrase",
+      parameters: input.tone,
+      character_count: input.character_count || 128,
+      creativity: input.creativity,
+      n_gen: input.n_gen || 5,
       source_language: input.source_language,
     });
     return this.makeRequest(data);
