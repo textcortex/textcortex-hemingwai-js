@@ -8,6 +8,8 @@ import {
   GenerateEmailSubjectProps,
   GenerateProductDescriptionProps,
   RequestData,
+  GenerateMetaDescProps,
+  GenerateBlogTitleProps,
 } from "./types/main";
 
 type ErrorResponse = AxiosError & {
@@ -201,6 +203,32 @@ export class TextCortex {
       source_language: input.source_language,
     });
 
+    return this.makeRequest(data);
+  }
+
+  async generateMetaDescription(input: GenerateMetaDescProps) {
+    const data = this.build({
+      prompt: input.pageTitle,
+      category: "Meta Description",
+      parameters: input.pageKeywords,
+      character_count: input.character_count || 256,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
+    return this.makeRequest(data);
+  }
+
+  async generateBlogTitle(input: GenerateBlogTitleProps) {
+    const data = this.build({
+      prompt: JSON.stringify(input.blogCategories),
+      category: "Blog Title",
+      parameters: "",
+      character_count: input.character_count,
+      creativity: input.creativity,
+      n_gen: input.n_gen,
+      source_language: input.source_language,
+    });
     return this.makeRequest(data);
   }
 }
