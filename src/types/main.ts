@@ -51,6 +51,30 @@ export interface RequestData extends Base {
   n_gen: number;
 }
 
+export interface GenerateMetaDescProps extends Base {
+  pageTitle: string;
+  pageKeywords: string;
+}
+
+export interface GenerateBlogTitleProps extends Base {
+  blogCategories: string[];
+}
+
+export interface GenerateInstagramCaptionsProps extends Base {
+  product: string;
+  audience: string;
+}
+
+export interface ParaphraseProps extends Base {
+  prompt: string;
+  tone?: string;
+}
+
+export interface ExtendProps extends Base {
+  prompt: string;
+  parameters?: string;
+}
+
 const countries = [
   "af",
   "sq",
