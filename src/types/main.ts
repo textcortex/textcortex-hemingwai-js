@@ -67,7 +67,12 @@ export interface GenerateInstagramCaptionsProps extends Base {
 
 export interface ParaphraseProps extends Base {
   prompt: string;
-  tone: string;
+  tone?: string;
+}
+
+export interface ExtendProps extends Base {
+  prompt: string;
+  parameters?: string;
 }
 
 const countries = [
