@@ -3,9 +3,8 @@ const { TextCortex } = require("textcortex-hemingwai-js");
 let hemingwai = new TextCortex(YOUR_API_KEY);
 
 hemingwai
-  .generateMetaDescription({
-    pageTitle: "Urban Fast Intro Video Template",
-    pageKeywords: "video templates, stock videos, design elements, ",
+  .generateBlogTitle({
+    blogCategories: ["startups", "raising vc funding", "being influential"],
   })
   .then((res) => {
     console.log("res: ", res);
